@@ -1,0 +1,6 @@
+sudo apt install net-tools 
+ifconfig | grep -ioE "inet(6|)\s[a-z0-9:.]*" | sed -e 's/$/<p>/' > ipaddresses.html
+echo $(date) >> ipaddresses.html
+cat /etc/machine-id >> ipaddresses.html
+cat ipaddresses.html
+
