@@ -1,6 +1,34 @@
-sudo apt install net-tools 
-ifconfig | grep -ioE "inet(6|)\s[a-z0-9:.]*" | sed -e 's/$/<p>/' > ipaddresses.html
-echo $(date) >> ipaddresses.html
-cat /etc/machine-id >> ipaddresses.html
-cat ipaddresses.html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my REPLACE ME </title>
+  </head>
+  <body>
+    <h1>Hello World from  REPLACE ME </h1>
 
+ <!-- ipaddresses past next line -->
+
+<br>
+<div id="list">
+       <iframe width="400" height="200" src="./ipaddresses.html" 
+                     frameborder="0">
+          </iframe>
+</div>
+
+
+
+
+
+   <h4 id="id01">AAAA</h4>
+   <h5 id="id02">AAAA</h5>
+  </body>
+<script>
+   const date = new Date();
+   const date1 = date.toLocaleString("en-uk", {
+  	hour12: true,  weekday: "short",  hour: "2-digit",   minute: "2-digit",  second: "2-digit",
+  	month: "2-digit",  year: "numeric",  day: "2-digit"  });
+      document.getElementById("id01").innerHTML = "" + date1;
+      document.getElementById("id02").innerHTML = "" + Date.now();</script>
+</html>
